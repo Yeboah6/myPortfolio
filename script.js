@@ -52,23 +52,24 @@
     <script id="form-handling">
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.querySelector('form');
-            
+
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
-                
+
                 const formData = new FormData(form);
                 const name = formData.get('name') || form.querySelector('input[type="text"]').value;
                 const email = formData.get('email') || form.querySelector('input[type="email"]').value;
                 const subject = formData.get('subject') || form.querySelectorAll('input[type="text"]')[1].value;
                 const message = formData.get('message') || form.querySelector('textarea').value;
-                
+
                 if (!name || !email || !message) {
                     alert('Please fill in all required fields.');
                     return;
                 }
-                
-                alert('Thank you for your message! I will get back to you soon.');
-                form.reset();
+
+                // Alternative: Simple mailto fallback
+                const mailtoLink = `mailto:yeboahs324@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`)}`;
+                window.location.href = mailtoLink;
             });
         });
-    </script>
+</script>
