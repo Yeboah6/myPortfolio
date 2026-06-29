@@ -1,4 +1,4 @@
-<script id="mobile-menu-toggle">
+{/* <script id="mobile-menu-toggle">
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -19,57 +19,57 @@
                 });
             });
         });
-    {/* </script> */}
+    </script> */}
 
-    <script id="scroll-animations">
-        document.addEventListener('DOMContentLoaded', function() {
-            const timelineItems = document.querySelectorAll('.timeline-item');
+    // <script id="scroll-animations">
+    //     document.addEventListener('DOMContentLoaded', function() {
+    //         const timelineItems = document.querySelectorAll('.timeline-item');
             
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
+    //         const observer = new IntersectionObserver((entries) => {
+    //             entries.forEach(entry => {
+    //                 if (entry.isIntersecting) {
+    //                     entry.target.classList.add('visible');
+    //                 }
+    //             });
+    //         }, { threshold: 0.1 });
 
-            timelineItems.forEach(item => {
-                observer.observe(item);
-            });
-        });
-    </script>
+    //         timelineItems.forEach(item => {
+    //             observer.observe(item);
+    //         });
+    //     });
+    // </script>
 
-    <script id="back-to-top-functionality">
-        document.addEventListener('DOMContentLoaded', function() {
-            const backToTopBtn = document.getElementById('back-to-top');
+    // <script id="back-to-top-functionality">
+    //     document.addEventListener('DOMContentLoaded', function() {
+    //         const backToTopBtn = document.getElementById('back-to-top');
             
-            backToTopBtn.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        });
-    </script>
+    //         backToTopBtn.addEventListener('click', function() {
+    //             window.scrollTo({ top: 0, behavior: 'smooth' });
+    //         });
+    //     });
+    // </script>
 
-    <script id="form-handling">
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('form');
+    // <script id="form-handling">
+    //     document.addEventListener('DOMContentLoaded', function() {
+    //         const form = document.querySelector('form');
 
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
+    //         form.addEventListener('submit', function(e) {
+    //             e.preventDefault();
 
-                const formData = new FormData(form);
-                const name = formData.get('name') || form.querySelector('input[type="text"]').value;
-                const email = formData.get('email') || form.querySelector('input[type="email"]').value;
-                const subject = formData.get('subject') || form.querySelectorAll('input[type="text"]')[1].value;
-                const message = formData.get('message') || form.querySelector('textarea').value;
+    //             const formData = new FormData(form);
+    //             const name = formData.get('name') || form.querySelector('input[type="text"]').value;
+    //             const email = formData.get('email') || form.querySelector('input[type="email"]').value;
+    //             const subject = formData.get('subject') || form.querySelectorAll('input[type="text"]')[1].value;
+    //             const message = formData.get('message') || form.querySelector('textarea').value;
 
-                if (!name || !email || !message) {
-                    alert('Please fill in all required fields.');
-                    return;
-                }
+    //             if (!name || !email || !message) {
+    //                 alert('Please fill in all required fields.');
+    //                 return;
+    //             }
 
-                // Alternative: Simple mailto fallback
-                const mailtoLink = `mailto:yeboahs324@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`)}`;
-                window.location.href = mailtoLink;
-            });
-        });
-</script>
+    //             // Alternative: Simple mailto fallback
+    //             const mailtoLink = `mailto:yeboahs324@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`)}`;
+    //             window.location.href = mailtoLink;
+    //         });
+    //     });
+    // </script>
